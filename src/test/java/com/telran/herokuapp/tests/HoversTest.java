@@ -6,27 +6,13 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class HoversTest {
+public class HoversTest extends TestBase {
 
     HoversPage hoversPage;
     private ChromeDriver driver;
-
-    @BeforeEach
-    public void initPageObjects() {
-        // brew install chromedriver
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-
-        driver = new ChromeDriver();
-        hoversPage = new HoversPage(driver);
-    }
-
-    @AfterEach
-    public void tearDown() {
-        driver.close();
-        driver.quit();
-    }
 
     @Test
     public void testHoversOnImages() {

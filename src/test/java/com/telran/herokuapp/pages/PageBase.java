@@ -1,8 +1,9 @@
 package com.telran.herokuapp.pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
-public abstract class Page {
+public abstract class PageBase {
 
     protected WebDriver driver;
 
@@ -11,8 +12,10 @@ public abstract class Page {
      *
      * @param webDriver
      */
-    public Page(WebDriver driver) {
+    public PageBase(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
+
     }
 
     public static String BASE_URL = "http://the-internet.herokuapp.com";
